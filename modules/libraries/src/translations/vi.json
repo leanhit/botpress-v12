@@ -1,0 +1,16 @@
+{
+  "fullName": "Thư viện dùng chung",
+  "addLibrary": "Thêm thư viện này",
+  "searchNpm": "Tìm thư viện trên NPM (khuyến nghị)",
+  "searchGithub": "Thêm từ kho GitHub (có thể chậm)",
+  "uploadArchive": "Tải lên một gói nén",
+  "libraries": "Thư viện",
+  "splash": {
+    "text1": "Các thư viện này có thể được sử dụng bởi tất cả bot, hành động và hook. Bạn cũng có thể tạo các đoạn mã tùy chỉnh có thể được nhập vào hook và hành động trong trình chỉnh sửa mã.",
+    "text2": "Ngoài ra, bạn có thể chỉnh sửa thủ công tệp package.json để cài đặt thư viện dùng chung thông qua trình chỉnh sửa mã."
+  },
+  "viewGithub": "Xem trên GitHub",
+  "customCommand": "Nhập lệnh tùy chỉnh",
+  "openConsole": "Mở bảng điều khiển để xem kết quả lệnh",
+  "betaWarning": "Mô-đun này đã lỗi thời và sẽ sớm bị xóa. Vui lòng sử dụng tab 'Libraries' trong studio thay thế"
+}

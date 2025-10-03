@@ -1,0 +1,95 @@
+{
+  "name": "hitlnext",
+  "fullName": "HITL Next",
+  "sort": {
+    "mostRecentlyCreated": "Tạo gần đây nhất",
+    "leastRecentlyCreated": "Tạo lâu nhất"
+  },
+  "filter": {
+    "unassigned": "Chưa được gán",
+    "assignedMe": "Được gán cho tôi",
+    "assignedOther": "Được gán cho người khác",
+    "resolved": "Đã xử lý",
+    "rejected": "Bị từ chối",
+    "expired": "Hết hạn"
+  },
+  "sortBy": "Sắp xếp theo",
+  "filterBy": "Lọc theo",
+  "newMessage": "Tin nhắn mới",
+  "agent": {
+    "status": "Trạng thái: {status}",
+    "name": "Tên: {name}",
+    "online": "Trực tuyến",
+    "offline": "Ngoại tuyến",
+    "getOnline": "Chuyển sang trực tuyến",
+    "getOffline": "Chuyển sang ngoại tuyến",
+    "onlineSuccess": "Bạn đã trực tuyến",
+    "offlineSuccess": "Bạn đã ngoại tuyến"
+  },
+  "handoff": {
+    "created": "Tạo lúc {date}",
+    "contactDetails": "Thông tin liên hệ",
+    "status": {
+      "pending": "đang chờ",
+      "assigned": "đã gán",
+      "resolved": "đã xử lý",
+      "rejected": "bị từ chối",
+      "expired": "hết hạn"
+    },
+    "assignedToAgent": "Bạn đã được gán cho một tác vụ",
+    "assignedToYou": "Cuộc trò chuyện được giao cho bạn",
+    "assign": "Gán cho tôi",
+    "resolve": "Xử lý",
+    "assigned": "Chuyển giao {id} đã được gán thành công",
+    "resolved": "Chuyển giao {id} đã được xử lý thành công",
+    "rejected": "Chuyển giao {id} đã bị từ chối thành công",
+    "you": "Bạn",
+    "from": "Từ {channel}"
+  },
+  "user": {
+    "anonymous": "Người dùng ẩn danh",
+    "variables": {
+      "heading": "Biến liên hệ",
+      "empty": "Không có biến",
+      "variable": "Biến",
+      "value": "Giá trị"
+    }
+  },
+  "commentForm": {
+    "addNote": "Thêm ghi chú",
+    "submit": "Thêm"
+  },
+  "comments": {
+    "heading": "Ghi chú từ tác nhân",
+    "empty": "Chưa có ghi chú nào."
+  },
+  "conversation": {
+    "delete": "Xóa cuộc trò chuyện",
+    "deleted": "Cuộc trò chuyện đã được xóa thành công",
+    "empty": "Chọn một chuyển giao đang chờ để bắt đầu trò chuyện với khách hàng.",
+    "tab": "Cuộc trò chuyện",
+    "composerPlaceholder": "Trả lời người dùng",
+    "send": "Gửi"
+  },
+  "handoffs": {
+    "empty": "Nhờ bạn và nhóm của bạn, hiện không có chuyển giao nào đang chờ."
+  },
+  "sidebar": {
+    "tab": "Chuyển giao",
+    "access": "Truy cập Botpress Handoffs",
+    "agents": {
+      "heading": "Tác nhân trực tuyến",
+      "empty": "Hiện không có tác nhân nào trực tuyến."
+    },
+    "handoffs": {
+      "heading": "Chuyển giao gần đây nhất",
+      "empty": "Nhờ bạn và nhóm của bạn, hiện không có chuyển giao nào đang chờ."
+    }
+  },
+  "tags": {
+    "heading": "Nhãn chuyển giao",
+    "empty": "Thẻ chưa được bật cho bot này.",
+    "placeholder": "Thêm hoặc xóa nhãn",
+    "noResults": "Không có kết quả."
+  }
+}
