@@ -1,0 +1,49 @@
+{
+  "fullName": "Phát sóng",
+  "title": "Phát sóng",
+  "cantFetchFromServer": "Không thể lấy danh sách phát sóng từ máy chủ.",
+  "contentFieldRequired": "Trường nội dung là bắt buộc.",
+  "unknownErrorOccurred": "Đã xảy ra lỗi không xác định",
+  "processing": "Đang xử lý",
+  "notStarted": "Chưa bắt đầu",
+  "done": "Hoàn tất",
+  "usersTime": "theo giờ người dùng",
+  "yourTime": "theo giờ của bạn",
+  "noFilter": "Không có bộ lọc",
+  "filters": "Bộ lọc",
+  "youHaveNoBroadcasts": "Bạn chưa có phát sóng nào",
+  "newBroadcast": "Tạo phát sóng mới",
+
+  "section": {
+    "upcoming": "Phát sóng sắp tới (trong 3 ngày tới)",
+    "past": "Phát sóng đã qua (3 ngày trước)",
+    "other": "Phát sóng khác"
+  },
+
+  "table": {
+    "date": "Ngày",
+    "content": "Nội dung",
+    "filters": "Bộ lọc",
+    "progress": "Tiến độ",
+    "action": "Hành động"
+  },
+
+  "alert": {
+    "title": "Đã xảy ra lỗi khi gửi phát sóng",
+    "message": "Xem log để biết chi tiết lỗi",
+    "hide": "Ẩn thông báo"
+  },
+
+  "form": {
+    "content": "Nội dung",
+    "pickContent": "Chọn nội dung",
+    "date": "Ngày",
+    "time": "Giờ",
+    "userTimeZone": "Múi giờ người dùng",
+    "filters": "Bộ lọc",
+    "modify": "Chỉnh sửa",
+    "create": "Tạo mới",
+    "modifyBroadcast": "Chỉnh sửa phát sóng",
+    "createBroadcast": "Tạo phát sóng mới"
+  }
+}

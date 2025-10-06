@@ -434,9 +434,9 @@
   },
   "langCodes": {
     "en": "English",
+    "vi": "Tiếng Việt",
     "fr": "Français",
-    "es": "Español",
-    "vi": "Tiếng Việt"
+    "es": "Español"
   },
   "bottomPanel": {
     "debug": "Gỡ lỗi",

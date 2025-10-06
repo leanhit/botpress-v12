@@ -1,0 +1,91 @@
+{
+  "error": {
+    "cannotOpenFile": "Không thể mở tệp với phần mở rộng này",
+    "cannotSaveFile": "Không thể lưu tệp của bạn",
+    "cannotUploadFile": "Không thể tải lên tệp của bạn",
+    "fileUploadDisabled": "Tải lên tệp đã bị vô hiệu hóa bởi biến môi trường.",
+    "invalidJson": "Tệp JSON không hợp lệ: {details}",
+    "lackUploadPermissions": "Bạn không có đủ quyền để tải lên tệp",
+    "missingParameters": "Thiếu tham số"
+  },
+  "fileStatus": {
+    "fileInformation": "Thông tin tệp",
+    "fixThem": "Vui lòng chắc chắn sửa {count, plural, one {lỗi} other {các lỗi}} trước khi lưu.",
+    "thereAreErrors": "Có {count} {count, plural, one {lỗi} other {lỗi}} trong tệp của bạn.",
+    "viewDetails": "Xem chi tiết"
+  },
+  "fullName": "Trình soạn thảo mã",
+  "nameModal": {
+    "chooseNameForFile": "Chọn tên cho tệp",
+    "createNewFile": "Tạo tệp mới",
+    "fileName": "Tên tệp (bao gồm cả thư mục nếu có)",
+    "nameAlreadyExists": "Một tệp với tên đó đã tồn tại. Vui lòng chọn tên khác hoặc xóa tệp cũ trước.",
+    "renameOrMoveFile": "Đổi tên hoặc di chuyển tệp"
+  },
+  "navigator": {
+    "cannotBeEdited": "Không thể chỉnh sửa trực tiếp",
+    "codeSamples": "Đây là các đoạn mã mẫu mà bạn có thể sao chép",
+    "codeSamples2": "để thêm tính năng mới vào bot của bạn.",
+    "copyExample": "Sao chép ví dụ vào bot của tôi",
+    "copyExampleToHooks": "Sao chép ví dụ vào hooks toàn cục",
+    "duplicateToCurrent": "Nhân bản vào bot hiện tại",
+    "isReadOnly": "Tệp này chỉ đọc",
+    "noFilesFound": "Không tìm thấy tệp nào trong danh mục này",
+    "renameMove": "Đổi tên / Di chuyển"
+  },
+  "newFileModal": {
+    "createForCurrent": "Tạo cho bot hiện tại",
+    "createNew": "Tạo {name} mới",
+    "fileName": "Tên tệp",
+    "fileNameHelp": "Không được có ký tự đặc biệt. Phải kết thúc bằng .js"
+  },
+  "sidePanel": {
+    "actions": "Hành động",
+    "bot": "Bot {name}",
+    "botHooks": "Bot Hooks",
+    "conf": "Cấu hình",
+    "currentBot": "Bot hiện tại",
+    "eventHooks": "Event Hooks",
+    "filterFiles": "Lọc tệp",
+    "generalHooks": "General Hooks",
+    "global": "Toàn cục",
+    "hooks": "Hooks",
+    "moduleConf": "Cấu hình module",
+    "pipelineHooks": "Pipeline Hooks",
+    "rawFileEditor": "Trình chỉnh sửa tệp thô",
+    "sharedLibs": "Thư viện"
+  },
+  "splash": {
+    "advancedEditor": "Trình soạn thảo nâng cao",
+    "basicEditor": "Trình soạn thảo cơ bản",
+    "bigWarning": "CẢNH BÁO",
+    "codeEditor": "Trình soạn thảo mã",
+    "commandPalette": "Bảng lệnh",
+    "editorDesc": "Trình soạn thảo mã cho phép bạn tạo và chỉnh sửa hành động mà không cần rời khỏi Botpress Studio. Nó hỗ trợ gợi ý và hoàn thành mã thông minh. Để chỉnh sửa các tệp toàn cục và nội dung do module tạo ra, bạn cần bật trong file cấu hình code-editor.json.",
+    "newFile": "Tệp mới",
+    "rawEditorDesc": "Trình chỉnh sửa tệp thô không có bảo vệ và bạn có thể dễ dàng làm hỏng các tệp quan trọng. Hãy cẩn thận! Bạn có thể chỉnh sửa bất kỳ tệp nào trong thư mục data, tạo tệp mới và di chuyển các tệp hiện có.",
+    "saveFile": "Lưu tệp"
+  },
+  "store": {
+    "alreadyExists": "Một tệp với tên đó đã tồn tại",
+    "chooseName": "Chọn tên cho {type} của bạn. Không dùng ký tự đặc biệt. Dùng camelCase",
+    "confirmDeleteFile": "Bạn có chắc muốn xóa tệp tên {file}?",
+    "confirmSaveFile": "Bạn có muốn lưu các thay đổi trong {file}?",
+    "fileDeleted": "Xóa tệp thành công!",
+    "fileDisabled": "Vô hiệu hóa tệp thành công!",
+    "fileDuplicated": "Nhân bản tệp thành công!",
+    "fileEnabled": "Kích hoạt tệp thành công!",
+    "fileRenamed": "Đổi tên tệp thành công!",
+    "fileSaved": "Lưu tệp thành công!",
+    "fileUploaded": "Tải tệp lên thành công!",
+    "invalidFilename": "Tên tệp không hợp lệ",
+    "onlySuperAdmins": "Chỉ Super Admin mới có thể dùng trình chỉnh sửa tệp thô"
+  },
+  "uploadModal": {
+    "completeFilePath": "Đường dẫn đầy đủ đến tệp",
+    "filePathHelp": "Nhập đường dẫn đầy đủ tới tệp, bao gồm cả phần mở rộng, tương đối với /data",
+    "overwrite": "Ghi đè tệp đã có",
+    "selectFile": "Chọn tệp của bạn",
+    "uploadFile": "Tải tệp lên"
+  }
+}
