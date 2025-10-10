@@ -3,7 +3,7 @@
   "fullName": "Broadcast",
   "version": "1.0.0",
   "status": "experimental",
-  "description": "Broadcast messages to all (or a subset) of your users",
+  "description": "Gửi tin nhắn hàng loạt đến tất cả (hoặc một nhóm) người dùng của bạn.",
   "private": true,
   "main": "dist/backend/index.js",
   "scripts": {

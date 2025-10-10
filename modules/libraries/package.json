@@ -3,7 +3,7 @@
   "fullName": "Libraries",
   "version": "1.1.0",
   "status": "experimental",
-  "description": "Provides the tooling necessary to easily install libraries that can be used by other scripts",
+  "description": "Cung cấp các công cụ cần thiết để dễ dàng cài đặt các thư viện có thể được sử dụng bởi các tập lệnh khác.",
   "private": true,
   "main": "dist/backend/index.js",
   "author": "Botpress, Inc.",

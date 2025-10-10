@@ -3,7 +3,7 @@
   "fullName": "Channel - Web",
   "version": "1.0.0",
   "status": "stable",
-  "description": "Provides an embeddable webchat that can be easily integrated in an existing website. It is also used for the Emulator when developing bots in the Studio",
+  "description": "Cung cấp một cửa sổ trò chuyện web có thể nhúng, dễ dàng tích hợp vào trang web hiện có. Nó cũng được sử dụng cho Trình giả lập (Emulator) khi phát triển bot trong Studio.",
   "private": true,
   "main": "dist/backend/index.js",
   "scripts": {

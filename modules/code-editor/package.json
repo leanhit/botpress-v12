@@ -3,7 +3,7 @@
   "fullName": "Code Editor",
   "version": "1.0.0",
   "status": "stable",
-  "description": "Provides an online editor to easily develop various components: actions, hooks, configurations...",
+  "description": "Cung cấp một trình chỉnh sửa trực tuyến giúp dễ dàng phát triển nhiều thành phần khác nhau: hành động, hook, cấu hình...",
   "private": true,
   "main": "dist/backend/index.js",
   "author": "Botpress, Inc.",

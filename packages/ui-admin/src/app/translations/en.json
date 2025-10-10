@@ -64,6 +64,7 @@
       "enterLicenseKey": "Enter license key",
       "enterYourLicense": "Enter your license key",
       "newLicenseKey": "New License Key",
+      "enablePro": "Enable Botpress Professional",
       "policy": {
         "admins": "Admins",
         "endDate": "End Date",

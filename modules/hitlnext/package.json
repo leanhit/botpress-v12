@@ -3,7 +3,7 @@
   "fullName": "HITL-next",
   "version": "1.0.0",
   "status": "stable",
-  "description": "Simple system to handoff tricky user conversations to your team of agents",
+  "description": "Hệ thống đơn giản để chuyển các cuộc trò chuyện phức tạp của người dùng cho nhóm hỗ trợ của bạn.",
   "private": true,
   "main": "dist/backend/index.js",
   "scripts": {

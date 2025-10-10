@@ -30,7 +30,10 @@ class Roles extends Component<Props> {
 
   render() {
     return (
-      <PageContainer title={lang.tr('admin.workspace.roles.title')} helpText={lang.tr('admin.workspace.rolesHelp')}>
+      <PageContainer
+        title={lang.tr('admin.workspace.roles.title')}
+        helpText={lang.tr('admin.workspace.roles.helpText')}
+      >
         {this.renderRoles()}
       </PageContainer>
     )

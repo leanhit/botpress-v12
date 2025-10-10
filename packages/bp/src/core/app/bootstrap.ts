@@ -4,6 +4,7 @@ import '../../sdk/rewire'
 import sdk from 'botpress/sdk'
 import chalk from 'chalk'
 import cluster from 'cluster'
+import { ALL_BOTS } from 'common/utils'
 import { BotpressApp, createApp, createLoggerProvider } from 'core/app/core-loader'
 import { ModuleConfigEntry } from 'core/config'
 import { LoggerProvider } from 'core/logger'
@@ -15,6 +16,38 @@ import _ from 'lodash'
 import { setupMasterNode, setupWebWorker, WorkerType } from 'orchestrator'
 import os from 'os'
 import { showBanner } from './banner'
+
+// --- PATCH: Fake license API to unlock Pro mode (GIỮ LẠI BẢN VÁ CŨ) ---
+process.nextTick(async () => {
+  try {
+    // Lúc này hàm createForBotpress đã bị bạn monkey-patch ở trên
+    const apiModule = require('./api')
+    const bp = await apiModule.createForBotpress()
+    const router = bp.http.createRouterForBot('admin/management/licensing', {
+      checkAuthentication: false
+    })
+
+    router.get('/', async (req, res) => {
+      res.json({
+        isPro: true,
+        isBuiltWithPro: true,
+        status: 'licensed',
+        license: {
+          label: 'Botpress Pro (Unlocked)',
+          plan: 'pro',
+          paidUntil: new Date(),
+          limits: {},
+          support: 'standard'
+        }
+      })
+    })
+
+    console.log('🧩 Fake Pro license API activated')
+  } catch (err) {
+    console.warn('⚠️ Failed to activate fake license API:', err)
+  }
+})
+// --- END PATCH ---
 
 async function setupEnv(app: BotpressApp) {
   await app.database.initialize()
@@ -147,8 +180,22 @@ async function start() {
 
   const globalConfig = await app.config.getBotpressConfig()
   const modules = _.uniqBy(globalConfig.modules, x => x.location)
-  const enabledModules = modules.filter(m => m.enabled)
-  const disabledModules = modules.filter(m => !m.enabled)
+  // const enabledModules = modules.filter(m => m.enabled) // Dòng gốc
+
+  // --- BẢN VÁ: LỌC BỎ MODULE NLU VÀ DEPENDENCY (GIỮ NGUYÊN) ---
+  const modulesToDisable = [
+    'MODULES_ROOT/nlu',
+    'MODULES_ROOT/basic-skills',
+    'MODULES_ROOT/misunderstood'
+  ]
+
+  const enabledModules = modules.filter(
+    m => m.enabled && !modulesToDisable.some(disabled => m.location.includes(disabled))
+  )
+
+  const disabledModules = modules.filter(m => !m.enabled || modulesToDisable.some(disabled => m.location.includes(disabled)))
+  // --- KẾT THÚC BẢN VÁ LỌC MODULE ---
+
 
   const resolver = new ModuleResolver(logger)
 
@@ -197,13 +244,14 @@ This is a fatal error, process will exit.`
 
   const erroredModulesLog = erroredModules.reduce((log, module) => {
     return (log += os.EOL + `${chalk.redBright('⊗')} ${module.entry.location} ${chalk.gray('(error)')}`)
+
   }, '')
 
   logger.info(
     `Using ${chalk.bold(loadedModules.length.toString())} modules` +
-      loadedModulesLog +
-      disabledModulesLog +
-      erroredModulesLog
+    loadedModulesLog +
+    disabledModulesLog +
+    erroredModulesLog
   )
 
   for (const { entry, err, message } of erroredModules) {
@@ -222,13 +270,14 @@ This is a fatal error, process will exit.`
     }
   })
 
+
   // This ensures that the last log displayed is the correct URL
   await AppLifecycle.waitFor(AppLifecycleEvents.STUDIO_READY)
 
   logger.info('')
   logger.info('='.repeat(75))
-  logger.info('-->  Documentation is available at    📘 https://botpress.com/docs')
-  logger.info('-->  Ask your questions on            👥 https://forum.botpress.com')
+  logger.info('-->  Documentation is available at    📘 https://botpress.com/docs')
+  logger.info('-->  Ask your questions on            👥 https://forum.botpress.com')
   logger.info('='.repeat(75))
   logger.info('')
 

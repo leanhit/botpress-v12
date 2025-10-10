@@ -337,10 +337,35 @@ export function createForGlobalHooks(): Promise<typeof sdk> {
   return container.get<BotpressAPIProvider>(TYPES.BotpressAPIProvider).create('Hooks', 'hooks')
 }
 
-export function createForBotpress(): Promise<typeof sdk> {
-  return container.get<BotpressAPIProvider>(TYPES.BotpressAPIProvider).create('Botpress', 'botpress')
-}
+// export function createForBotpress(): Promise<typeof sdk> {
+//   return container.get<BotpressAPIProvider>(TYPES.BotpressAPIProvider).create('Botpress', 'botpress')
+// }
 
 export function createForAction(): Promise<typeof sdk> {
   return container.get<BotpressAPIProvider>(TYPES.BotpressAPIProvider).create('Actions', 'actions')
 }
+
+//
+export async function createForBotpress() {
+  // Dùng express router thay vì sdk.http.createRouter (vì sdk.http có thể undefined)
+  const express = require('express')
+
+  return {
+    http: {
+      createRouterForBot: (path: string, opts?: any) => {
+        const router = express.Router()
+
+        // Log cho debug (tuỳ chọn)
+        console.log(`🧩 [createForBotpress] Fake router created for path: ${path}`)
+
+        // Gắn các method cơ bản để tránh lỗi nếu Botpress gọi tới
+        router.get = router.get.bind(router)
+        router.post = router.post.bind(router)
+        router.use = router.use.bind(router)
+
+        return router
+      }
+    }
+  }
+}
+

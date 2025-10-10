@@ -46,15 +46,6 @@ export const LoginForm: FC<Props> = props => {
         disabled={!email || !password}
         intent={Intent.PRIMARY}
       />
-
-      <Button
-        tabIndex={3}
-        type="submit"
-        id="btn-signin"
-        text={lang.tr('admin.signIn')}
-        disabled={!email || !password}
-        intent={Intent.PRIMARY}
-      />
     </form>
   )
 }

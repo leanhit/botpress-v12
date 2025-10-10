@@ -3,7 +3,7 @@
   "fullName": "Human In The Loop",
   "version": "1.0.0",
   "status": "stable",
-  "description": "Provides an interface for a Botpress user to take over conversations with chat users",
+  "description": "Cung cấp một giao diện cho phép người dùng Botpress tiếp quản các cuộc trò chuyện với người dùng chat.",
   "private": true,
   "main": "dist/backend/index.js",
   "botpress": {

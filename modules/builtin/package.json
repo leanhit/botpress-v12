@@ -3,7 +3,7 @@
   "fullName": "Built-In",
   "version": "1.0.0",
   "status": "stable",
-  "description": "Provides the base elements that are recommended to run Botpress",
+  "description": "Cung cấp các thành phần cơ bản được khuyến nghị để chạy Botpress.",
   "private": true,
   "main": "dist/backend/index.js",
   "scripts": {

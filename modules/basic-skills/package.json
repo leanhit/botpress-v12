@@ -3,7 +3,7 @@
   "fullName": "Basic Skills",
   "version": "11.5.0",
   "status": "stable",
-  "description": "Provides easy-to-use components to execute repetitive tasks",
+  "description": "Cung cấp các thành phần dễ sử dụng để thực hiện các tác vụ lặp đi lặp lại.",
   "private": true,
   "main": "dist/backend/index.js",
   "webpack": {
