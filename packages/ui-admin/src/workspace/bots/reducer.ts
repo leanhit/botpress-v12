@@ -161,27 +161,12 @@ export const fetchBotHealth = (): AppThunk => {
 
 export const fetchBotNLULanguages = (): AppThunk => {
   return async dispatch => {
-    try {
-      // 🧩 Fake response — không cần gọi API thật
-      const fakeData = {
-        validLanguages: ['en', 'vi', 'fr'],
-        status: 'ok',
-        success: true
-      }
-
-      console.log('🧩 Fake NLU health API intercepted — returning mock data')
-      dispatch({ type: FETCH_BOT_NLU_LANGUAGES_RECEIVED, languages: fakeData.validLanguages })
-    } catch (err) {
-      console.warn('⚠️ Failed to fake NLU health API:', err)
+    const { data } = await api.getSecured({ useV1: true }).get(`/bots/${ALL_BOTS}/mod/nlu/health`)
+    if (!data || !data.validLanguages) {
+      return
     }
+    dispatch({ type: FETCH_BOT_NLU_LANGUAGES_RECEIVED, languages: data.validLanguages })
   }
-  // return async dispatch => {
-  //   const { data } = await api.getSecured({ useV1: true }).get(`/bots/${ALL_BOTS}/mod/nlu/health`)
-  //   if (!data || !data.validLanguages) {
-  //     return
-  //   }
-  //   dispatch({ type: FETCH_BOT_NLU_LANGUAGES_RECEIVED, languages: data.validLanguages })
-  // }
 }
 
 export const setWorkspaceAppBotId = (botId?: string): AppThunk => {

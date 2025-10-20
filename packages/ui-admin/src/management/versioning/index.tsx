@@ -16,7 +16,7 @@ const MIN_UUID_LENGTH = 50
 const DisplayCommand = ({ command }) => {
   const [visible, setVisible] = useState(false)
   const text = visible ? command : `${command.split('authToken')[0]}authToken `
-  const toastCopiedClipboard = () => toast.info(`${lang.tr('admin.workspace.users.collaborators.copiedToClipboard')}`)
+  const toastCopiedClipboard = () => toast.info('Copied to clipboard')
 
   return (
     <div>
@@ -29,7 +29,7 @@ const DisplayCommand = ({ command }) => {
       />
       &nbsp;
       <CopyToClipboard text={command} onCopy={toastCopiedClipboard}>
-        <Button small text={lang.tr('admin.workspace.bots.item.copyToClipboard')} icon="clipboard" />
+        <Button small text="Copy to clipboard" icon="clipboard" />
       </CopyToClipboard>
     </div>
   )

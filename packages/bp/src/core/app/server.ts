@@ -1,7 +1,6 @@
 import AdminRouter from 'admin/admin-router'
 import bodyParser from 'body-parser'
 import { AxiosBotConfig, AxiosOptions, http, Logger, RouterOptions } from 'botpress/sdk'
-import child_process, { SpawnOptions, ChildProcess } from 'child_process'
 import { CSRF_TOKEN_HEADER_LC, CSRF_TOKEN_HEADER, JWT_COOKIE_NAME } from 'common/auth'
 import LicensingService from 'common/licensing-service'
 import { machineUUID } from 'common/stats'
@@ -42,7 +41,6 @@ import { WorkspaceService } from 'core/users'
 import cors from 'cors'
 import errorHandler from 'errorhandler'
 import { UnlicensedError } from 'errors'
-import { EventEmitter } from 'events'
 import express, { NextFunction, Response } from 'express'
 import rateLimit from 'express-rate-limit'
 import { createServer, Server } from 'http'
@@ -66,32 +64,6 @@ import { ShortLinksRouter } from '../routers/shortlinks'
 import { NLUService } from '../services/nlu/nlu-service'
 import { InternalRouter } from './internal-router'
 import { debugRequestMw, resolveAsset, resolveIndexPaths } from './server-utils'
-
-// PATCH: Prevent Botpress from spawning missing NLU or Messaging binary
-
-const originalSpawn = child_process.spawn
-
-  // Ép kiểu để tránh lỗi overload của TypeScript
-  ; (child_process as any).spawn = function (
-    command: string,
-    args?: readonly string[],
-    options?: SpawnOptions
-  ): ChildProcess {
-    if (
-      command?.includes('/bin/nlu') ||
-      command?.endsWith('nlu') ||
-      command?.includes('/bin/messaging') ||
-      command?.endsWith('messaging')
-    ) {
-      console.warn('🧩 Blocked spawn of binary:', command)
-      const fake = new EventEmitter() as unknown as ChildProcess
-      setTimeout(() => fake.emit('close', 0), 10)
-      return fake
-    }
-
-    // Gọi lại spawn thật
-    return (originalSpawn as any).call(this, command, args, options)
-  }
 
 const BASE_API_PATH = '/api/v1'
 const SERVER_USER_STRATEGY = 'default' // The strategy isn't validated for the userver user, it could be anything.

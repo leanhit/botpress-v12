@@ -5,7 +5,6 @@ import { createIntl, createIntlCache, IntlShape } from 'react-intl'
 import en from './en.json'
 import es from './es.json'
 import fr from './fr.json'
-import vi from './vi.json'
 
 const defaultLocale = 'en'
 let translations = {}
@@ -25,7 +24,7 @@ document.addEventListener('keydown', function(event) {
 
 const langExtend = langs => {
   if (isEmpty(translations)) {
-    translations = { en, fr, es, vi }
+    translations = { en, fr, es }
   }
 
   for (const [key, value] of Object.entries(langs)) {

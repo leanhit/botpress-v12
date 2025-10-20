@@ -5,7 +5,6 @@ import _ from 'lodash'
 import en from '../translations/en.json'
 import es from '../translations/es.json'
 import fr from '../translations/fr.json'
-import vi from '../translations/vi.json'
 
 import apiCall from './callApi'
 import choice from './choice'
@@ -50,7 +49,7 @@ const skillsToRegister: sdk.Skill[] = [
 const entryPoint: sdk.ModuleEntryPoint = {
   onServerReady,
   onModuleUnmount,
-  translations: { en, fr, es, vi },
+  translations: { en, fr, es },
   definition: {
     name: 'basic-skills',
     fullName: 'Basic Skills',

@@ -3,7 +3,7 @@
   "fullName": "Analytics",
   "version": "12.6.0",
   "status": "stable",
-  "description": "Cung cấp các phân tích cấp cao về việc sử dụng bot của bạn.",
+  "description": "Provides high level analytics about your bot's usage",
   "private": true,
   "main": "dist/backend/index.js",
   "author": "Botpress, Inc.",

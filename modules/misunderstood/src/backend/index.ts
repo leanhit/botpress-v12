@@ -3,7 +3,6 @@ import * as sdk from 'botpress/sdk'
 import en from '../translations/en.json'
 import es from '../translations/es.json'
 import fr from '../translations/fr.json'
-import vi from '../translations/vi.json'
 import { FlaggedEvent, FLAG_REASON } from '../types'
 
 import initApi from './api'
@@ -47,7 +46,7 @@ const onModuleUnmount = async (_bp: typeof sdk) => {
 const entryPoint: sdk.ModuleEntryPoint = {
   onServerReady,
   onModuleUnmount,
-  translations: { en, fr, es, vi },
+  translations: { en, fr, es },
   definition: {
     experimental: false,
     name: 'misunderstood',
