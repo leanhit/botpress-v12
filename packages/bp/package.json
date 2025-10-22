@@ -1,7 +1,7 @@
 {
   "name": "botpress",
   "version": "12.31.10",
-  "description": "The world's most powerful conversational engine",
+  "description": "Công cụ hội thoại mạnh mẽ nhất thế giới",
   "engines": {
     "node": "^12"
   },

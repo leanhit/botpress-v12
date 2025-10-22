@@ -1,0 +1,88 @@
+{
+  "actionButton": "Nút Hành động",
+  "fullName": "Các Kỹ năng Cơ bản",
+  "types": {
+    "permissionDenied": "Bạn không có quyền tải lên tập tin cho bot này. Hãy trao đổi với chủ sở hữu nhóm của bạn.",
+    "uploadFileChoice": "Hoặc tải lên một tập tin",
+    "enterUrlChoice": "Hoặc nhập URL",
+    "infoInterpreted": "Thông tin này sẽ được diễn giải/thông dịch:",
+    "actionButton": {
+      "buttonTitle": "Tiêu đề của nút",
+      "description": "Một nút kích hoạt một hành động, thường được sử dụng trong các thẻ (card)",
+      "textTitle": "Nhập văn bản hoặc ID của một phần tử nội dung (ví dụ: #!builtin_text-myid)",
+      "title": "Nút Hành động"
+    },
+    "card": {
+      "description": "Một tin nhắn thẻ (card message) với tiêu đề kèm theo tiêu đề phụ tùy chọn, hình ảnh và các nút hành động."
+    },
+    "carousel": {
+      "cards": "Các thẻ (card) của Băng chuyền",
+      "description": "Một băng chuyền (carousel) là một mảng các thẻ",
+      "title": "Băng chuyền"
+    },
+    "image": {
+      "description": "Một tin nhắn hiển thị hình ảnh với tiêu đề tùy chọn",
+      "imageLabel": "Tiêu đề",
+      "labelDesc": "Một số nền tảng yêu cầu đặt tên cho hình ảnh.",
+      "title": "Hình ảnh",
+      "uploadImage": "Tải lên Hình ảnh"
+    },
+    "audio": {
+      "description": "Một tin nhắn hiển thị tập tin âm thanh với tiêu đề tùy chọn",
+      "audioLabel": "Tiêu đề",
+      "title": "Âm thanh"
+    },
+    "video": {
+      "description": "Một tin nhắn hiển thị tập tin video với tiêu đề tùy chọn",
+      "videoLabel": "Tiêu đề",
+      "title": "Video"
+    },
+    "file": {
+      "description": "Một tin nhắn hiển thị một tập tin nào đó với tiêu đề tùy chọn",
+      "fileLabel": "Tiêu đề",
+      "title": "Tập tin"
+    },
+    "singleChoice": {
+      "choice": "Lựa chọn",
+      "description": "Đề xuất các lựa chọn cho người dùng với ý định chỉ chọn một (kèm theo tin nhắn tùy chọn)",
+      "itemTitle": "Tiêu đề của lựa chọn (là thứ hiển thị cho người dùng)",
+      "itemValue": "Giá trị mà bot của bạn nhận được khi người dùng chọn lựa chọn này (thường bị ẩn với người dùng)",
+      "title": "Lựa chọn Đơn",
+      "displayInMessageTitle": "Hiển thị bên dưới tin nhắn"
+    },
+    "text": {
+      "alternatives": "Các phương án thay thế",
+      "description": "Một tin nhắn văn bản thông thường với chỉ báo đang nhập (typing indicator) và các phương án thay thế tùy chọn",
+      "message": "Tin nhắn"
+    },
+    "location": {
+      "title": "Vị trí",
+      "description": "Một tin nhắn hiển thị vị trí với địa chỉ và tiêu đề tùy chọn",
+      "latitude": "Vĩ độ",
+      "longitude": "Kinh độ",
+      "address": "Địa chỉ",
+      "label": "Tiêu đề"
+    },
+    "dropdown": {
+      "allowCreate": "Cho phép tạo tùy chọn mới",
+      "allowMultiple": "Cho phép chọn nhiều lựa chọn",
+      "asKeyboardDesc": "Nó sẽ được hiển thị ngay phía trên trình soạn thảo (giống như các lựa chọn)",
+      "asKeyboardTitle": "Hiển thị dưới dạng bàn phím",
+      "buttonDesc": "Khi để trống, tùy chọn đã chọn sẽ được gửi khi hộp thả xuống được đóng",
+      "buttonText": "Văn bản hiển thị trên nút.",
+      "desc": "Hiển thị một danh sách các tùy chọn cho người dùng",
+      "itemLabel": "Văn bản hiển thị trong menu thả xuống",
+      "itemValue": "Giá trị mà bot sẽ nhận được (tùy chọn)",
+      "optionsList": "Danh sách các tùy chọn",
+      "title": "Hộp thả xuống",
+      "widthDesc": "Kích thước mặc định hiển thị mục chọn và nút trên một dòng. Thay đổi nó để phù hợp với nhu cầu của bạn",
+      "widthTitle": "Chiều rộng của thành phần (tính bằng pixel)",
+      "placeholderText": "Văn bản giữ chỗ cho hộp thả xuống",
+      "useMarkdown": "Sử dụng markdown"
+    }
+  },
+  "typingIndicator": "Hiển thị chỉ báo đang nhập",
+  "useMarkdown": "Sử dụng markdown",
+  "markdownHelp": "Tham khảo tài liệu này để biết cú pháp markdown: ",
+  "disableFreeText": "Vô hiệu hóa văn bản tự do"
+}

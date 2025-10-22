@@ -1,0 +1,16 @@
+{
+  "fullName": "Các Thư viện Chia sẻ",
+  "addLibrary": "Thêm thư viện này",
+  "searchNpm": "Tìm kiếm thư viện trên NPM (được khuyến nghị)",
+  "searchGithub": "Thêm từ kho lưu trữ GitHub (có thể chậm)",
+  "uploadArchive": "Tải lên một tập tin nén (archive)",
+  "libraries": "Các Thư viện",
+  "splash": {
+    "text1": "Các thư viện này có thể được sử dụng bởi mọi bot, hành động (actions) và hook. Bạn cũng có thể tạo các đoạn mã tùy chỉnh để được import bởi hooks và actions trên trình chỉnh sửa mã.",
+    "text2": "Cũng có thể chỉnh sửa thủ công tập tin package.json để cài đặt các thư viện chia sẻ bằng trình chỉnh sửa mã"
+  },
+  "viewGithub": "Xem trên Github",
+  "customCommand": "Nhập một lệnh tùy chỉnh",
+  "openConsole": "Mở bảng điều khiển (console) để xem kết quả lệnh",
+  "betaWarning": "Module này đã lỗi thời và sẽ sớm bị xóa. Vui lòng sử dụng tab 'Thư viện' trên studio thay thế"
+}

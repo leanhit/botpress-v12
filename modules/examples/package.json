@@ -3,7 +3,7 @@
   "fullName": "Examples",
   "version": "1.0.0",
   "status": "stable",
-  "description": "Provides code examples accessible via the online editor to help develop actions, hooks, and configurations.",
+  "description": "Cung cấp các ví dụ mã (code examples) có thể truy cập thông qua trình chỉnh sửa trực tuyến để giúp phát triển các hành động (actions), hooks và cấu hình (configurations).",
   "private": true,
   "main": "dist/backend/index.js",
   "author": "Botpress, Inc.",

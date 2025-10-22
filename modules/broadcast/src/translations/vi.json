@@ -1,0 +1,49 @@
+{
+  "fullName": "Phát sóng",
+  "title": "Phát sóng",
+  "cantFetchFromServer": "Không thể tải danh sách phát sóng từ máy chủ.",
+  "contentFieldRequired": "Cần có trường Nội dung (Content).",
+  "unknownErrorOccurred": "Đã xảy ra lỗi không xác định",
+  "processing": "Đang xử lý",
+  "notStarted": "Chưa bắt đầu",
+  "done": "Hoàn thành",
+  "usersTime": "giờ của người dùng",
+  "yourTime": "giờ của bạn",
+  "noFilter": "Không có bộ lọc",
+  "filters": "Bộ lọc",
+  "youHaveNoBroadcasts": "Bạn không có chiến dịch phát sóng nào",
+  "newBroadcast": "Tạo Phát sóng Mới",
+
+  "section": {
+    "upcoming": "Các chiến dịch phát sóng sắp tới (3 ngày tới)",
+    "past": "Các chiến dịch phát sóng đã qua (3 ngày trước)",
+    "other": "Các chiến dịch phát sóng khác"
+  },
+
+  "table": {
+    "date": "Ngày",
+    "content": "Nội dung",
+    "filters": "Bộ lọc",
+    "progress": "Tiến độ",
+    "action": "Hành động"
+  },
+
+  "alert": {
+    "title": "Đã xảy ra lỗi khi gửi một chiến dịch phát sóng",
+    "message": "Hãy xem nhật ký (logs) để biết điều gì đã xảy ra",
+    "hide": "Ẩn Thông báo"
+  },
+
+  "form": {
+    "content": "Nội dung",
+    "pickContent": "Chọn Nội dung",
+    "date": "Ngày",
+    "time": "Thời gian",
+    "userTimeZone": "Múi giờ của người dùng",
+    "filters": "Bộ lọc",
+    "modify": "Chỉnh sửa",
+    "create": "Tạo",
+    "modifyBroadcast": "Chỉnh sửa Chiến dịch Phát sóng",
+    "createBroadcast": "Tạo Chiến dịch Phát sóng"
+  }
+}

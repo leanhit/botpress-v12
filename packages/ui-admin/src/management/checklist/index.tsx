@@ -11,7 +11,7 @@ import Item from './Item'
 import { fetchServerConfig } from './reducer'
 import style from './style.scss'
 
-const NOT_SET = 'Not set'
+const NOT_SET = 'Chưa thiết lập'
 
 const getDisplayValue = (val: any) => {
   if (val === undefined || val === null) {
@@ -32,17 +32,17 @@ type Props = ConnectedProps<typeof connector>
 const Container = props => {
   return (
     <PageContainer
-      title="Production Checklist"
+      title="Danh sách kiểm tra môi trường Production"
       superAdmin={true}
       helpText={
         <span>
-          This is a checklist of recommended settings when running Botpress in production.
-          <br /> Environment variables are displayed in <Tag>gray</Tag> and values from the botpress.config.json config
-          file in <Tag intent={Intent.PRIMARY}>blue</Tag>
+          Đây là danh sách các thiết lập được khuyến nghị khi chạy Botpress trong môi trường sản xuất (production).
+          <br /> Các biến môi trường được hiển thị bằng <Tag>màu xám</Tag> và các giá trị từ file cấu hình
+          <Tag intent={Intent.PRIMARY}>màu xanh dương</Tag>.
           <br />
           <br />
-          Once your server is correctly setup, we recommend disabling this page by setting the environment variable
-          BP_DISABLE_SERVER_CONFIG to "true"
+          Sau khi máy chủ của bạn đã được cấu hình chính xác, nên tắt trang này bằng cách đặt biến môi trường
+          BP_DISABLE_SERVER_CONFIG = "true".
         </span>
       }
     >
@@ -83,8 +83,8 @@ export const Checklist: FC<Props> = props => {
     return (
       <Container>
         <Callout intent={Intent.PRIMARY}>
-          Server configuration is disabled. To view this page, set the environment variable "BP_DISABLE_SERVER_CONFIG"
-          to false
+          Cấu hình máy chủ hiện đang bị vô hiệu hóa. Để xem trang này, hãy đặt biến môi trường
+          "BP_DISABLE_SERVER_CONFIG" = false.
         </Callout>
       </Container>
     )
@@ -100,43 +100,42 @@ export const Checklist: FC<Props> = props => {
     <Container>
       <div className={style.checklist}>
         <Item
-          title="Use a Postgres database"
+          title="Sử dụng cơ sở dữ liệu Postgres"
           docs="https://botpress.com/docs/building-chatbots/developers/database#how-to-switch-from-sqlite-to-postgressql"
           status={getEnv('DATABASE_URL').startsWith('postgres') ? 'success' : 'warning'}
           source={[{ type: 'env', key: 'DATABASE_URL', value: '**********' }]}
         >
-          By default, Botpress uses an SQLite database, which is not recommended in a production environment. Postgres
-          is more resilient and allows to run Botpress in cluster mode (using multiple servers to handle the load).
+          Mặc định, Botpress sử dụng cơ sở dữ liệu SQLite, điều này không được khuyến nghị cho môi trường production.
+          Postgres ổn định hơn và cho phép chạy Botpress ở chế độ cụm (cluster mode) để tăng hiệu suất.
         </Item>
 
         <Item
-          title="Use the database BPFS storage"
+          title="Sử dụng BPFS lưu trữ trong cơ sở dữ liệu"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#use-the-database-bpfs-storage"
           status={getEnv('BPFS_STORAGE') === 'database' ? 'success' : 'warning'}
           source={[{ type: 'env', key: 'BPFS_STORAGE', value: getEnv('BPFS_STORAGE') }]}
         >
-          When this option is set, every bots and configuration files are stored in the database, and only that copy is
-          edited when you make changes to them using the interface. This way, multiple servers can access the same
-          up-to-date data at the same time.
+          Khi tùy chọn này được bật, toàn bộ bot và tệp cấu hình được lưu trong cơ sở dữ liệu. Điều này cho phép nhiều
+          máy chủ truy cập dữ liệu mới nhất cùng lúc.
         </Item>
 
         <Item
-          title="Run Botpress in production mode"
+          title="Chạy Botpress ở chế độ sản xuất (Production Mode)"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#run-botpress-in-production-mode"
           status={getEnv('BP_PRODUCTION') === 'true' ? 'success' : 'warning'}
           source={[{ type: 'env', key: 'BP_PRODUCTION', value: getEnv('BP_PRODUCTION') }]}
         >
-          When you run Botpress in production, these changes happens:
+          Khi chạy ở chế độ production:
           <ul>
-            <li>Hide stack traces when error occurs</li>
-            <li>Hides debug logs and logging of standard errors to optimize speed</li>
-            <li>Optimizes some validations for speed</li>
-            <li>Enables the use of multiple servers (cluster mode)</li>
+            <li>Ẩn thông tin lỗi chi tiết (stack trace)</li>
+            <li>Tắt log debug và log lỗi để tăng tốc độ</li>
+            <li>Tối ưu các bước xác thực nội bộ</li>
+            <li>Cho phép chạy nhiều máy chủ đồng thời (cluster mode)</li>
           </ul>
         </Item>
 
         <Item
-          title="Configure the external server URL"
+          title="Cấu hình địa chỉ URL bên ngoài của máy chủ"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#configure-the-external-server-url"
           status={isSet(getEnv('EXTERNAL_URL')) || isSet(getConfig('httpServer.externalUrl')) ? 'success' : 'warning'}
           source={[
@@ -144,15 +143,12 @@ export const Checklist: FC<Props> = props => {
             { type: 'config', key: 'httpServer.externalUrl', value: getConfig('httpServer.externalUrl') }
           ]}
         >
-          <span>
-            This may cause multiple issues in production, like resources not displaying correctly or links not working.
-            When it is not set, it defaults to http://localhost:3000. When using Botpress Professional, this value is
-            also used to validate your license.
-          </span>
+          Nếu không cấu hình, Botpress sẽ mặc định sử dụng http://localhost:3000, có thể gây lỗi hiển thị hoặc liên kết
+          hỏng. Trong Botpress Professional, giá trị này còn được dùng để xác minh giấy phép.
         </Item>
 
         <Item
-          title="Enable Redis support"
+          title="Bật hỗ trợ Redis"
           status={isSet(getEnv('REDIS_URL')) && isSet(getEnv('CLUSTER_ENABLED')) ? 'success' : 'warning'}
           source={[
             { type: 'env', key: 'REDIS_URL', value: '**********' },
@@ -160,15 +156,13 @@ export const Checklist: FC<Props> = props => {
             { type: 'env', key: 'BP_REDIS_SCOPE', value: getEnv('BP_REDIS_SCOPE') }
           ]}
         >
-          Redis allows you to run multiple Botpress servers, all using the same data. Only 'REDIS_URL' and
-          'CLUSTER_ENABLED' are required for Redis to work properly. Setting a Redis scope allows you to run multiple
-          Botpress clusters (e.g. staging and production) on the same Redis cluster without impacting one another (not
-          recommended). Simply re-use the same URL for Redis and set the 'BP_REDIS_SCOPE' environment variable to prod
-          on your production instance and staging on your staging environment.
+          Redis cho phép bạn chạy nhiều máy chủ Botpress sử dụng cùng một nguồn dữ liệu. Nên đặt các biến 'REDIS_URL' và
+          'CLUSTER_ENABLED' để Redis hoạt động đúng. Biến 'BP_REDIS_SCOPE' có thể dùng để tách các môi trường staging và
+          production.
         </Item>
 
         <Item
-          title="Restrict CORS to your own domain"
+          title="Giới hạn CORS cho tên miền của bạn"
           status={
             getConfig('httpServer.cors.enabled') === 'false' || isSet(getConfig('httpServer.cors.origin'))
               ? 'success'
@@ -179,12 +173,12 @@ export const Checklist: FC<Props> = props => {
             { type: 'config', key: 'httpServer.cors.origin', value: getConfig('httpServer.cors.origin') }
           ]}
         >
-          By default, Botpress allows any origin to reach the server. You can either disable CORS completely (set the
-          configuration to false), or set an allowed origin
+          Mặc định, Botpress cho phép mọi nguồn (origin) truy cập. Bạn nên tắt CORS hoàn toàn hoặc chỉ định domain được
+          phép truy cập.
         </Item>
 
         <Item
-          title="Enable Cookie storage for the JWT Token"
+          title="Bật lưu trữ JWT Token bằng Cookie"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#enable-cookie-storage-for-the-jwt-token"
           status={getConfig('jwtToken.useCookieStorage') === 'true' ? 'success' : 'warning'}
           source={[
@@ -193,116 +187,111 @@ export const Checklist: FC<Props> = props => {
             { type: 'config', key: 'httpServer.cors.credentials', value: getConfig('httpServer.cors.credentials') }
           ]}
         >
-          Storing the token in cookies adds an additional layer of security for the user's session. The CORS policy must
-          be configured beforehand. Please refer to the documentation before enabling this feature.
+          Lưu token trong cookie giúp tăng bảo mật cho phiên đăng nhập. Cần cấu hình CORS trước khi bật tính năng này.
+          Hãy tham khảo tài liệu hướng dẫn để biết thêm chi tiết.
         </Item>
 
         <Item
-          title="Host your own language server"
+          title="Tự lưu trữ máy chủ ngôn ngữ của bạn"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#host-your-own-language-server"
           status={languageEndpoint.includes('botpress.io') ? 'warning' : 'success'}
           source={[{ type: 'config', key: 'nlu.json: languageSources', value: languageEndpoint }]}
         >
-          The default language server configured with Botpress is a public server, which has request limitations and
-          should not be relied upon when serving customers. Please follow the instructions in our documentation to setup
-          your own, then change the server URL in the configuration file <strong>global/data/config/nlu.json</strong>
+          Máy chủ ngôn ngữ mặc định của Botpress là công cộng (public) và có giới hạn truy cập. Bạn nên tự thiết lập máy
+          chủ riêng và cập nhật đường dẫn trong file cấu hình <strong>global/data/config/nlu.json</strong>.
         </Item>
 
         <Item
-          title="Securing your server with HTTPS"
+          title="Bảo mật máy chủ bằng HTTPS"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#securing-your-server-with-https"
           status={protocol === 'https' ? 'success' : 'warning'}
-          source={[{ key: 'Detected protocol', value: protocol }]}
+          source={[{ key: 'Giao thức phát hiện', value: protocol }]}
         >
-          Botpress doesn't handle certificates and https headers directly. Those should be handled by a NGINX server in
-          front of it. We have a recommended NGINX configuration sample in the documentation.
+          Botpress không xử lý chứng chỉ HTTPS trực tiếp. Hãy dùng NGINX đặt trước Botpress để xử lý chứng chỉ và bảo
+          mật kết nối. Tham khảo cấu hình mẫu trong tài liệu.
         </Item>
 
         <Item
-          title="Enable audit trail"
+          title="Bật ghi vết hoạt động (Audit Trail)"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#enable-audit-trail"
           status={hasAuditTrail ? 'success' : 'warning'}
         >
-          You can enable a special debug scope that tracks every requests sent to the server (and the corresponding
-          user/ip address) and output them to the log file. You can configure those scopes by clicking on 'Debug' in the
-          menu on the left
+          Tính năng này ghi lại mọi yêu cầu gửi đến máy chủ (kèm người dùng/IP) và lưu trong log. Bạn có thể bật bằng
+          cách chọn mục "Debug" trong menu bên trái.
         </Item>
 
         <Item
-          title="Enable Sticky Sessions"
+          title="Bật Sticky Sessions"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#enable-sticky-sessions"
           status="none"
           source={[
             { type: 'config', key: 'httpServer.socketTransports', value: getConfig('httpServer.socketTransports') }
           ]}
         >
-          When using "Polling" as a primary or secondary socket transport, it is mandatory to enable sticky sessions,
-          otherwise the handshake may never complete. If you decide to use "Websocket" as the only transport, which is a
-          valid option nowadays, you don't need to enable sticky sessions.
+          Nếu bạn sử dụng "Polling" làm phương thức socket chính hoặc phụ, cần bật Sticky Sessions để handshake hoàn
+          tất. Nếu chỉ sử dụng "Websocket", bạn có thể bỏ qua tùy chọn này.
           <br />
           <br />
-          See this documentation for more details:{' '}
+          Tham khảo thêm tại:{' '}
           <a href="https://socket.io/docs/v4/using-multiple-nodes/#why-is-sticky-session-required" target="_blank">
             https://socket.io/docs/v4/using-multiple-nodes/#why-is-sticky-session-required
           </a>
           <br />
           <br />
-          Here is your current socket transports configuration:
+          Cấu hình socket hiện tại của bạn:
         </Item>
 
         <Item
-          title="Output logs to the filesystem"
+          title="Ghi log ra hệ thống tệp (Filesystem)"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#output-logs-to-the-filesystem"
           status={getConfig('logs.fileOutput.enabled') === 'true' ? 'success' : 'none'}
           source={[{ type: 'config', key: 'logs.fileOutput.enabled', value: getConfig('logs.fileOutput.enabled') }]}
         >
-          By default, Botpress does some minimal logging to the database. It is recommended to enable the log output on
-          the file system to keep traces
+          Mặc định, Botpress chỉ ghi log cơ bản vào cơ sở dữ liệu. Nên bật ghi log ra hệ thống tệp để lưu lại lịch sử
+          hoạt động chi tiết.
         </Item>
 
         <Item
-          title="Change Botpress base path"
+          title="Thay đổi đường dẫn gốc (Base Path) của Botpress"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#change-botpress-base-path"
           status={isSet(getLive('ROOT_PATH')) ? 'success' : 'none'}
-          source={[{ key: 'Current base path', value: !isSet(getLive('ROOT_PATH')) ? '/' : getLive('ROOT_PATH') }]}
+          source={[{ key: 'Đường dẫn gốc hiện tại', value: !isSet(getLive('ROOT_PATH')) ? '/' : getLive('ROOT_PATH') }]}
         >
-          By default, all requests are handled at the top level of the external url. It is possible to change that path
-          (for example to use http://localhost:3000/botpress). You can do that by updating your server's EXTERNAL_URL
-          and adding the suffix at the end.
+          Mặc định, mọi yêu cầu được xử lý tại gốc URL. Bạn có thể thay đổi, ví dụ: http://localhost:3000/botpress. Chỉ
+          cần cập nhật EXTERNAL_URL và thêm hậu tố đường dẫn tương ứng.
         </Item>
 
         <Item
-          title="Create custom roles and review permissions"
+          title="Tạo vai trò tùy chỉnh và xem lại quyền hạn"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#create-custom-roles-and-review-permissions"
           status="none"
         >
-          There is a default set of role and permissions when you create a workspace. It is recommended to review and
-          update them.
+          Khi tạo workspace, Botpress có sẵn một số vai trò mặc định. Nên xem lại và điều chỉnh quyền cho phù hợp.
         </Item>
 
         <Item
-          title="Enable other authentication mechanism"
+          title="Bật các cơ chế xác thực khác"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#enable-other-authentication-mechanism"
           status="none"
         >
-          The default authentication method is a username/password, but you can enable additional authentication
-          strategies to access Botpress. We currently support LDAP, SAML and OAUTH2.
+          Mặc định Botpress sử dụng xác thực tên đăng nhập/mật khẩu, nhưng bạn có thể bật thêm các cơ chế khác như LDAP,
+          SAML hoặc OAUTH2.
         </Item>
 
         <Item
-          title="Configure your Reverse Proxy and Load Balancing"
+          title="Cấu hình Reverse Proxy và Load Balancing"
           docs="https://botpress.com/docs/enterprise/server-and-cicd-management/production-checklist#configure-your-reverse-proxy-and-load-balancing"
           status="none"
         >
-          Check the documentation for more information
+          Xem thêm hướng dẫn chi tiết trong tài liệu chính thức của Botpress.
         </Item>
 
-        <Item title="Generate a diagnostic report" status="none">
-          This tool will generate a report which can help diagnose problems. It will test the connectivity to various
-          components, ensure that proper folders are writable, and will also include the various configuration files.
+        <Item title="Tạo báo cáo chẩn đoán hệ thống" status="none">
+          Công cụ này giúp tạo báo cáo hỗ trợ phân tích lỗi. Nó sẽ kiểm tra kết nối, quyền ghi thư mục, và tổng hợp các
+          tệp cấu hình.
           <br />
           <br />
-          Passwords and secrets will be obfuscated
+          Mật khẩu và thông tin nhạy cảm sẽ được ẩn (obfuscate).
           <br />
           <br />
           <DiagReport />

@@ -3,7 +3,7 @@
   "fullName": "UI Path",
   "version": "1.0.0",
   "status": "stable",
-  "description": "UiPath integration for Botpress",
+  "description": "Tích hợp UiPath cho Botpress",
   "private": true,
   "main": "dist/backend/index.js",
   "author": "Botpress, Inc.",

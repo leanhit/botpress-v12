@@ -435,7 +435,8 @@
   "langCodes": {
     "en": "English",
     "fr": "Français",
-    "es": "Español"
+    "es": "Español",
+    "vi": "Vietnamese"
   },
   "bottomPanel": {
     "debug": "Debug",

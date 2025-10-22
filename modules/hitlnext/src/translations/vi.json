@@ -1,0 +1,95 @@
+{
+  "name": "hitlnext",
+  "fullName": "HITL Next",
+  "sort": {
+    "mostRecentlyCreated": "Mới tạo Gần nhất",
+    "leastRecentlyCreated": "Cũ nhất"
+  },
+  "filter": {
+    "unassigned": "Chưa được Chỉ định",
+    "assignedMe": "Được Chỉ định cho Tôi",
+    "assignedOther": "Được Chỉ định cho Người khác",
+    "resolved": "Đã Giải quyết",
+    "rejected": "Đã Từ chối",
+    "expired": "Đã Hết hạn"
+  },
+  "sortBy": "Sắp xếp theo",
+  "filterBy": "Lọc theo",
+  "newMessage": "Tin nhắn Mới",
+  "agent": {
+    "status": "Trạng thái: {status}",
+    "name": "Tên: {name}",
+    "online": "Trực tuyến",
+    "offline": "Ngoại tuyến",
+    "getOnline": "Chuyển sang Trực tuyến",
+    "getOffline": "Chuyển sang Ngoại tuyến",
+    "onlineSuccess": "Bạn đã trực tuyến",
+    "offlineSuccess": "Bạn đã ngoại tuyến"
+  },
+  "handoff": {
+    "created": "Đã tạo {date}",
+    "contactDetails": "Thông tin Liên hệ",
+    "status": {
+      "pending": "đang chờ xử lý",
+      "assigned": "đã được chỉ định",
+      "resolved": "đã giải quyết",
+      "rejected": "đã từ chối",
+      "expired": "đã hết hạn"
+    },
+    "assignedToAgent": "Bạn đã được chỉ định cho một nhân viên chăm sóc",
+    "assignedToYou": "Cuộc trò chuyện đã được chuyển cho Bạn",
+    "assign": "Chỉ định cho tôi",
+    "resolve": "Giải quyết",
+    "assigned": "Đã chỉ định Handoff {id} thành công",
+    "resolved": "Đã giải quyết Handoff {id} thành công",
+    "rejected": "Đã từ chối Handoff {id} thành công",
+    "you": "Bạn",
+    "from": "Từ {channel}"
+  },
+  "user": {
+    "anonymous": "Người dùng Ẩn danh",
+    "variables": {
+      "heading": "Các biến liên hệ",
+      "empty": "Không có biến nào",
+      "variable": "Biến",
+      "value": "Giá trị"
+    }
+  },
+  "commentForm": {
+    "addNote": "Thêm Ghi chú",
+    "submit": "Thêm"
+  },
+  "comments": {
+    "heading": "Các Ghi chú từ nhân viên chăm sóc",
+    "empty": "Chưa có ghi chú nào."
+  },
+  "conversation": {
+    "delete": "Xóa cuộc trò chuyện",
+    "deleted": "Đã xóa cuộc trò chuyện thành công",
+    "empty": "Chọn một yêu cầu chuyển giao đang chờ xử lý để bắt đầu trò chuyện với khách hàng của bạn.",
+    "tab": "Cuộc trò chuyện",
+    "composerPlaceholder": "Trả lời người dùng",
+    "send": "Gửi"
+  },
+  "handoffs": {
+    "empty": "Nhờ bạn và đội ngũ của bạn, hiện tại không có yêu cầu chuyển giao (handoffs) nào đang chờ xử lý."
+  },
+  "sidebar": {
+    "tab": "Chuyển giao (Handoffs)",
+    "access": "Tru cập Chuyển giao Botpress",
+    "agents": {
+      "heading": "Nhân viên chăm sóc Trực tuyến",
+      "empty": "Hiện tại không có nhân viên chăm sóc nào trực tuyến."
+    },
+    "handoffs": {
+      "heading": "Các yêu cầu Chuyển giao Gần đây nhất",
+      "empty": "Nhờ bạn và đội ngũ của bạn, hiện tại không có yêu cầu chuyển giao nào đang chờ xử lý."
+    }
+  },
+  "tags": {
+    "heading": "Nhãn chuyển giao",
+    "empty": "Thẻ (Tags) chưa được bật cho bot này.",
+    "placeholder": "Thêm hoặc xóa nhãn",
+    "noResults": "Không có kết quả."
+  }
+}

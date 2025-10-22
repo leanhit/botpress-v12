@@ -4,6 +4,7 @@ import _ from 'lodash'
 
 import en from '../translations/en.json'
 import fr from '../translations/fr.json'
+import vi from '../translations/vi.json'
 
 import api from './api'
 import HitlDb from './db'
@@ -36,7 +37,7 @@ const entryPoint: sdk.ModuleEntryPoint = {
   onServerStarted,
   onServerReady,
   onModuleUnmount,
-  translations: { en, fr },
+  translations: { en, fr, vi },
   definition: {
     name: 'hitl',
     menuIcon: 'headset',

@@ -4,6 +4,7 @@ import { Config } from '../config'
 import en from '../translations/en.json'
 import es from '../translations/es.json'
 import fr from '../translations/fr.json'
+import vi from '../translations/vi.json'
 
 import api from './api'
 import Editor from './editor'
@@ -20,7 +21,7 @@ const onModuleUnmount = async (bp: typeof sdk) => {
 const entryPoint: sdk.ModuleEntryPoint = {
   onServerReady,
   onModuleUnmount,
-  translations: { en, fr, es },
+  translations: { en, fr, es, vi },
   definition: {
     name: 'code-editor',
     menuIcon: 'code',

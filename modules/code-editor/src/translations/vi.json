@@ -1,0 +1,91 @@
+{
+  "error": {
+    "cannotOpenFile": "Không thể mở tập tin với phần mở rộng đó",
+    "cannotSaveFile": "Không thể lưu tập tin của bạn",
+    "cannotUploadFile": "Không thể tải lên tập tin của bạn",
+    "fileUploadDisabled": "Tải lên tập tin đã bị vô hiệu hóa bởi biến môi trường.",
+    "invalidJson": "Tập tin JSON không hợp lệ: {details}",
+    "lackUploadPermissions": "Bạn không có đủ quyền để tải lên tập tin",
+    "missingParameters": "Thiếu tham số"
+  },
+  "fileStatus": {
+    "fileInformation": "Thông tin Tập tin",
+    "fixThem": "Vui lòng đảm bảo sửa {count, plural, one {lỗi này} other {các lỗi này}} trước khi lưu.",
+    "thereAreErrors": "Có {count} {count, plural, one {lỗi} other {lỗi}} trong tập tin của bạn.",
+    "viewDetails": "Xem chi tiết"
+  },
+  "fullName": "Trình Chỉnh Sửa Mã",
+  "nameModal": {
+    "chooseNameForFile": "Chọn tên cho tập tin",
+    "createNewFile": "Tạo tập tin mới",
+    "fileName": "Tên Tập tin (bao gồm cả thư mục)",
+    "nameAlreadyExists": "Một tập tin với tên đó đã tồn tại. Vui lòng chọn tên khác hoặc xóa tập tin đó trước.",
+    "renameOrMoveFile": "Đổi tên hoặc di chuyển tập tin"
+  },
+  "navigator": {
+    "cannotBeEdited": "Chúng không thể được chỉnh sửa trực tiếp",
+    "codeSamples": "Đây là các mẫu mã mà bạn có thể sao chép",
+    "codeSamples2": "để thêm các tính năng mới cho bot của bạn.",
+    "copyExample": "Sao chép ví dụ vào bot của tôi",
+    "copyExampleToHooks": "Sao chép ví dụ vào các hook chung (global hooks)",
+    "duplicateToCurrent": "Sao chép bản sao vào bot hiện tại",
+    "isReadOnly": "Tập tin này chỉ đọc",
+    "noFilesFound": "Không tìm thấy tập tin nào trong danh mục này",
+    "renameMove": "Đổi tên / Di chuyển"
+  },
+  "newFileModal": {
+    "createForCurrent": "Tạo cho bot hiện tại",
+    "createNew": "Tạo một {name} mới",
+    "fileName": "Tên tập tin",
+    "fileNameHelp": "Không được phép sử dụng ký tự đặc biệt. Phải kết thúc bằng .js"
+  },
+  "sidePanel": {
+    "actions": "Hành động (Actions)",
+    "bot": "Bot {name}",
+    "botHooks": "Các Hook của Bot",
+    "conf": "Cấu hình (Configurations)",
+    "currentBot": "Bot Hiện tại",
+    "eventHooks": "Các Hook Sự kiện",
+    "filterFiles": "Lọc tập tin",
+    "generalHooks": "Các Hook Chung",
+    "global": "Toàn cục (Global)",
+    "hooks": "Các Hook",
+    "moduleConf": "Cấu hình Module",
+    "pipelineHooks": "Các Hook Xử lý Dữ liệu (Pipeline Hooks)",
+    "rawFileEditor": "Trình Chỉnh Sửa Tập tin Thô (Raw File Editor)",
+    "sharedLibs": "Thư viện"
+  },
+  "splash": {
+    "advancedEditor": "Trình Chỉnh Sửa Nâng cao",
+    "basicEditor": "Trình Chỉnh Sửa Cơ bản",
+    "bigWarning": "CẢNH BÁO",
+    "codeEditor": "Trình Chỉnh Sửa Mã",
+    "commandPalette": "Bảng Lệnh (Command Palette)",
+    "editorDesc": "Trình chỉnh sửa mã cho phép bạn tạo và chỉnh sửa các hành động mà không cần rời khỏi botpress studio. Nó có tính năng định kiểu và tự động hoàn thành mã thông minh. Để chỉnh sửa các tập tin toàn cục và nội dung do module tạo, bạn cần kích hoạt điều đó bằng cách chỉnh sửa tập tin cấu hình code-editor.json.",
+    "newFile": "Tập tin mới",
+    "rawEditorDesc": "Trình chỉnh sửa tập tin thô không có biện pháp bảo vệ và bạn có thể dễ dàng làm hỏng các tập tin quan trọng. Hãy xử lý cẩn thận! Bạn có thể chỉnh sửa bất kỳ tập tin nào nằm trong thư mục data, tạo tập tin mới và di chuyển các tập tin hiện có.",
+    "saveFile": "Lưu tập tin"
+  },
+  "store": {
+    "alreadyExists": "Một tập tin với tên đó đã tồn tại",
+    "chooseName": "Chọn tên cho {type} của bạn. Không có ký tự đặc biệt. Sử dụng quy tắc camel case (ví dụ: tenTapTinMoi)",
+    "confirmDeleteFile": "Bạn có chắc chắn muốn xóa tập tin tên là {file} không?",
+    "confirmSaveFile": "Bạn có muốn lưu các thay đổi đã thực hiện với {file} không?",
+    "fileDeleted": "Đã xóa tập tin thành công!",
+    "fileDisabled": "Đã vô hiệu hóa tập tin thành công!",
+    "fileDuplicated": "Đã sao chép tập tin thành công!",
+    "fileEnabled": "Đã kích hoạt tập tin thành công!",
+    "fileRenamed": "Đã đổi tên tập tin thành công!",
+    "fileSaved": "Đã lưu tập tin thành công!",
+    "fileUploaded": "Đã tải lên tập tin thành công!",
+    "invalidFilename": "Tên tập tin không hợp lệ",
+    "onlySuperAdmins": "Chỉ Super Admin mới có thể sử dụng trình chỉnh sửa tập tin thô"
+  },
+  "uploadModal": {
+    "completeFilePath": "Đường dẫn Tập tin Hoàn chỉnh",
+    "filePathHelp": "Nhập đường dẫn đầy đủ đến tập tin, bao gồm phần mở rộng, tương đối với /data",
+    "overwrite": "Ghi đè lên tập tin hiện có",
+    "selectFile": "Chọn tập tin của bạn",
+    "uploadFile": "Tải lên Tập tin"
+  }
+}

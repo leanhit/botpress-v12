@@ -3,7 +3,7 @@
   "fullName": "Google - Speech",
   "version": "1.0.0",
   "status": "stable",
-  "description": "A Botpress module for Google speech-to-text and text-to-speech",
+  "description": "Một module của Botpress dành cho tính năng chuyển lời nói thành văn bản và chuyển văn bản thành lời nói của Google",
   "private": true,
   "main": "dist/backend/index.js",
   "scripts": {
